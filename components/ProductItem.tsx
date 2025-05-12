@@ -1,4 +1,5 @@
 import { Image } from "expo-image";
+import { Link } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Product } from "../data/products";
@@ -9,19 +10,21 @@ interface ProductItemProps {
 
 const ProductItem = ({ product }: ProductItemProps) => {
   return (
-    <TouchableOpacity style={styles.container}>
-      <Image
-        source={{ uri: product.image }}
-        style={styles.image}
-        contentFit="cover"
-        transition={300}
-      />
-      <View style={styles.infoContainer}>
-        <Text style={styles.name}>{product.name}</Text>
-        <Text style={styles.price}>${product.price.toFixed(2)}</Text>
-        <Text style={styles.category}>{product.category}</Text>
-      </View>
-    </TouchableOpacity>
+    <Link href={`/product/ProductDetails`} asChild>
+      <TouchableOpacity style={styles.container}>
+        <Image
+          source={{ uri: product.image }}
+          style={styles.image}
+          contentFit="cover"
+          transition={300}
+        />
+        <View style={styles.infoContainer}>
+          <Text style={styles.name}>{product.name}</Text>
+          <Text style={styles.price}>${product.price.toFixed(2)}</Text>
+          <Text style={styles.category}>{product.category}</Text>
+        </View>
+      </TouchableOpacity>
+    </Link>
   );
 };
 
