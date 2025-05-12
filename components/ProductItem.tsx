@@ -10,7 +10,7 @@ interface ProductItemProps {
 
 const ProductItem = ({ product }: ProductItemProps) => {
   return (
-    <Link href={`/product/ProductDetails`} asChild>
+    <Link href={`/product/${product.id}`} asChild>
       <TouchableOpacity style={styles.container}>
         <Image
           source={{ uri: product.image }}
