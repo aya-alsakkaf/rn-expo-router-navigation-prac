@@ -1,9 +1,16 @@
-import { Redirect } from "expo-router";
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import ProductList from "../../../components/ProductList";
 
 const HomeScreen = () => {
-  return <Redirect href="/(tabs)/product" />;
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>Products</Text>
+      </View>
+      <ProductList />
+    </View>
+  );
 };
 
 export default HomeScreen;

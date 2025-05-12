@@ -1,10 +1,13 @@
 import { Image } from "expo-image";
+import { useLocalSearchParams } from "expo-router";
 import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { products } from "../../data/products";
+import { products } from "../../../data/products";
 
 const ProductDetails = () => {
-  const product = products.find((p) => p.id === "1");
+  const { id } = useLocalSearchParams();
+
+  const product = products.find((p) => p.id === id);
 
   if (!product) {
     return (
