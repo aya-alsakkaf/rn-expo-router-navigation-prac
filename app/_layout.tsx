@@ -1,27 +1,13 @@
 import { Stack } from "expo-router";
 import React from "react";
-import { Button } from "react-native";
 
 export default function RootLayout() {
   return (
     <Stack>
       <Stack.Screen
-        name="index"
-        options={{ title: "Home", headerShown: false }}
-      />
-      <Stack.Screen
-        name="product/[id]"
+        name="(tabs)"
         options={{
-          title: "Product Details",
-          headerBackTitle: "Go Back",
-          headerRight: () => (
-            <Button
-              title="Edit"
-              onPress={() => {
-                alert("You Edited The Product");
-              }}
-            />
-          ),
+          headerShown: false,
         }}
       />
     </Stack>

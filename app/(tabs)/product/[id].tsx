@@ -2,7 +2,7 @@ import { Image } from "expo-image";
 import { useLocalSearchParams } from "expo-router";
 import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { products } from "../../data/products";
+import { products } from "../../../data/products";
 
 const ProductDetails = () => {
   const { id } = useLocalSearchParams();
